@@ -37,19 +37,23 @@ class TripService(private val context: Context) {
 
     private fun loadTripsFromJson() {
         trips.clear()
-        val input = InputStreamReader(context.openFileInput("my_trips.json"))
-        val jsonString = input.readText()
+        try {
+            val input = InputStreamReader(context.openFileInput("my_trips1.json"))
+            val jsonString = input.readText()
 
-        val tokener = JSONTokener(jsonString)
-        val jsonObject = tokener.nextValue() as JSONObject
+            val tokener = JSONTokener(jsonString)
+            val jsonObject = tokener.nextValue() as JSONObject
 
-        val jsonTrips = jsonObject.getJSONArray("trips")
-        for (i in 0 until jsonTrips.length()) {
-            val jsonTrip = jsonTrips.getJSONObject(i)
-            val id = jsonTrip.getInt("id")
-            val image = jsonTrip.getString("image")
-            val itinerary = getItineraryFromJson(jsonTrip.getJSONObject("itinerary"))
-            trips.add(Trip(id, image, itinerary))
+            val jsonTrips = jsonObject.getJSONArray("trips")
+            for (i in 0 until jsonTrips.length()) {
+                val jsonTrip = jsonTrips.getJSONObject(i)
+                val id = jsonTrip.getInt("id")
+                val image = jsonTrip.getString("image")
+                val itinerary = getItineraryFromJson(jsonTrip.getJSONObject("itinerary"))
+                trips.add(Trip(id, image, itinerary))
+            }
+        } catch (e: IOException) {
+            saveTrips()
         }
     }
 
@@ -77,7 +81,7 @@ class TripService(private val context: Context) {
 
     private fun saveTripsToJson() {
         val jsonString = convertTripsToJson()
-        val output = OutputStreamWriter(context.openFileOutput("my_trips.json", Context.MODE_PRIVATE))
+        val output = OutputStreamWriter(context.openFileOutput("my_trips1.json", Context.MODE_PRIVATE))
         output.write(jsonString)
         output.close()
     }

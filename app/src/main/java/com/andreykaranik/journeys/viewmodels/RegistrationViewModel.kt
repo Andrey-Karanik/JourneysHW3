@@ -22,7 +22,6 @@ class RegistrationViewModel(
     val password: LiveData<String> = _password
 
     init {
-
     }
 
     fun register() {
