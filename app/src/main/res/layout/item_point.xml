@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp">
+
+    <EditText
+        android:id="@+id/point_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/point_name_hint" />
+    <EditText
+        android:id="@+id/point_time_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="@string/point_time_hint" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="12dp" />
+</LinearLayout>

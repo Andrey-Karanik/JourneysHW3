@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Journeys</string>
+    <string name="start_point_name_hint">Город отправления</string>
+    <string name="start_point_time_hint">Время отправления</string>
+    <string name="point_name_hint">Город прибытия</string>
+    <string name="point_time_hint">Время прибытия</string>
+    <string name="create_itinerary">Построить маршрут</string>
+    <string name="add_point">Добавить город</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="save">Сохранить</string>
+    <string name="add">Добавить</string>
+    <string name="not_all_fields_filled_exception">Заполните все поля</string>
+    <string name="such_user_already_exists_exception">Такой пользователь уже существует</string>
+    <string name="error">Ошибка</string>
+    <string name="no_trips">Пока что не маршрутов</string>
+    <string name="login">Войти</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="email_hint">Почта</string>
+    <string name="password_hint">Пароль</string>
+    <string name="authorize">Авторизоваться</string>
+    <string name="authorization">Авторизация</string>
+    <string name="registration">Регистрация</string>
+    <string name="bad_user">Неправильный вход</string>
+</resources>
